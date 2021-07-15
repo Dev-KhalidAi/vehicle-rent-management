@@ -13,6 +13,7 @@
 
 <body>
     <div class="main-container">
+        <img class="main-background" src="./images/mercedes-benz.jpg.webp" alt="">
         <div class="main-section">
             <div class="header">
                 <img class= "logo" src="./images/logo-white.png" alt="">
@@ -35,15 +36,129 @@
                 <div class="describtion">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ab cum officia esse ipsam laboriosam optio. Quaerat, doloribus unde? Accusantium, laudantium. Labore dignissimos sequi repellat in, labori Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam incidunt magni earum nostrum exercitationem qui tenetur autem, quidem a sit tempore illum ex delectus corporis necessitatibus fuga, voluptas sapiente enim!
                 </div>
-
                 <button class="book-button"> Book Now</button>
             </section>
             <br><br><br><br><br><br>
-              <div class="seprator">
+            <div class="seprator">
                 <div class="square1"></div>
                 <div class="line"></div>
                 <div class="square1"></div>
             </div>
+            <section>
+                <div class="section-title">
+                    Vheicles We Offer
+                </div>
+                <div class="vheicles-container">
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car1.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes C 300 Coupé
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car2.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes GLS 500 4MATIC
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car3.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes AMG E 53 4MATIC
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car4.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes C 300 Coupé
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                     <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car1.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes C 300 Coupé
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car2.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes GLS 500 4MATIC
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car3.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes AMG E 53 4MATIC
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    <div class="vheicle-container">
+                        <div class="car-image-container">
+                            <div class="test"></div>
+                            <img src="./images/car4.jpeg.webp" alt="">
+                        </div>
+                        <div class="vheicle-describtion">
+                            Mercedes C 300 Coupé
+                        </div>
+                        <div class="vhecle-year">
+                            2021
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </section>
+            <div class="seprator">
+                <div class="square1"></div>
+                <div class="line"></div>
+                <div class="square1"></div>
+            </div>
+            <section>
+                <div class="section-title">
+                    In Progress...
+                </div>
+            </section>
         </div>
     </div>
 </body>
