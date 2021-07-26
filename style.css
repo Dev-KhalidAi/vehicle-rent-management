@@ -7,9 +7,17 @@
 .main-background {
   position: absolute; /* Reposition logo from the natural layout */
   z-index: -1;
-  top: -170px;
+  background-image: url("./images/mercedes-benz.jpg.webp");
   box-shadow: 0px 0px 20px 2px #000000;
   width: 100%;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .header {
@@ -23,8 +31,7 @@
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .main-section {
@@ -36,7 +43,8 @@
     rgba(29, 133, 133, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  opacity: 0.95;
+  z-index: 2;
+  opacity: 0.85;
   height: 2000px;
 }
 
@@ -66,6 +74,15 @@ li:hover {
   margin-left: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 #signs {
   border: solid 1px white;
   padding: 5px 20px 5px 20px;
@@ -79,7 +96,7 @@ li:hover {
 
 .intro {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 140px;
   color: white;
   font-size: 3rem;
   font-weight: 650;
@@ -110,13 +127,13 @@ hr {
   border-radius: 20px;
   font-size: 17px;
   text-align: center;
-  background: #e6e6e6;
-
+  background: white;
+  width: fit-content;
   margin: 0 auto;
   margin-top: 60px;
   cursor: pointer;
-  opacity: 0.5;
-  transition: 0.8s;
+  opacity: 0.9;
+  transition: 0.2s;
 }
 
 .book-button:hover {
@@ -159,7 +176,6 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
-  width: 70%;
   margin: 0 auto;
   margin-top: 50px;
 }
