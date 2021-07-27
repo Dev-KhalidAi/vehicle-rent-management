@@ -13,7 +13,6 @@ body {
   );
   background-repeat: no-repeat;
   font-family: EuclidCircular, Arial, Helvetica, sans-serif;
-  height: 2000px;
 }
 
 .logo-header {
@@ -133,10 +132,12 @@ a:visited {
 }
 
 .cars {
+  position: relative;
+
   background-color: white;
   height: 250px;
   border-radius: 10px;
-  position: relative;
+  box-shadow: 0 0 50px rgba(7, 7, 7, 0.342);
 }
 
 .cars img {
@@ -151,15 +152,16 @@ a:visited {
 }
 
 .book-car {
+  position: absolute;
   padding: 10px 20px 10px 20px;
   border: none;
   border-radius: 20px;
   background: rgba(29, 133, 133, 1);
   color: white;
-  position: absolute;
   bottom: -15px;
-  left: 0;
+  width: fit-content;
   right: 0;
+  left: 0;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
@@ -203,4 +205,85 @@ a:visited {
   margin: 0 auto;
   margin-top: 20px;
   color: white;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.541);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: -1;
+}
+
+.main-footer {
+  width: 80%;
+  opacity: 1 !important;
+}
+
+.logo-footer {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.logo-footer img {
+  width: 30px;
+  color: white;
+}
+
+#newsletter {
+  width: 270px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.342);
+  border: none;
+  border-radius: 10px;
+  padding: 0px 20px 0px 20px;
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+
+.socialmedia-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.links {
+  display: grid;
+  width: 600px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+#line2 {
+  margin-top: 20px;
+}
+
+.link-item {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.719);
+  transition: 0.4s;
+}
+
+.link-item:hover {
+  color: white;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.copyright {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+#bars {
+  display: none;
 }
