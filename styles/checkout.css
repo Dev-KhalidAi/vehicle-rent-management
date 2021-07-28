@@ -125,7 +125,7 @@ a:visited {
   font-weight: 750;
 }
 
-.picked-item {
+.main-box {
   width: 75%;
   margin: 0 auto;
   background: white;
@@ -167,7 +167,7 @@ a:visited {
   margin-left: 5px;
   text-align: left;
 }
-.car-name {
+.main-title {
   padding: 20px;
   font-size: 25px;
   font-weight: 700;
@@ -212,7 +212,161 @@ a:visited {
   border-radius: 15px;
   margin-left: 5px;
   font-size: 14px;
+  transition: 0.2s;
+  cursor: pointer;
 }
+
+.btns:hover {
+  background: #1d8585;
+}
+
+.info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#available {
+  color: rgba(29, 133, 133, 1);
+  display: none;
+}
+
+#price {
+  color: rgba(29, 133, 133, 1);
+}
+
+#change {
+  display: flex;
+  align-items: center;
+  color: rgb(218, 144, 33);
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.checkout {
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background: rgb(236, 172, 75);
+  color: white;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.checkout:hover {
+  background: rgb(255, 199, 114);
+}
+
+.title2 {
+  display: block;
+  margin: 0 auto;
+}
+
+#name {
+  margin-left: 5px;
+}
+
+.fill-card p {
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 10px;
+  opacity: 0.3;
+}
+
+.fill-card {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.fill-card form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: rgb(99, 98, 98);
+  font-size: 14px;
+}
+
+.card-info {
+  display: flex;
+}
+
+.card-info input {
+  width: 100%;
+}
+
+form input {
+  border-radius: 0px;
+  padding: 8px;
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.295);
+}
+
+.test {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cards {
+  position: absolute;
+  right: 0;
+  border-radius: 0px 16px 0px 0px;
+  font-size: 20px;
+  color: rgb(25, 67, 146);
+}
+
+#one {
+  border-radius: 7px 7px 0px 0px;
+  width: 100%;
+}
+
+#two {
+  border-top: 0px;
+  border-radius: 0px 0px 0px 7px;
+}
+
+#three {
+  border-left: 0px;
+  border-top: 0px;
+  border-radius: 0px 0px 7px 0px;
+}
+
+#checkout-btn {
+  margin-top: 20px;
+  padding: 10px 0px 10px 0px;
+  border: none;
+  background: rgb(71, 158, 71);
+  color: white;
+  border-radius: 7px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#checkout-btn:hover {
+  background: rgb(80, 170, 80);
+}
+
+form {
+  position: relative;
+}
+
 footer {
   background: rgb(0, 0, 0);
   display: flex;
@@ -291,4 +445,20 @@ footer {
 
 #bars {
   display: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title hr {
+  height: 1px;
+  width: 20%;
+}
+
+.title p {
+  width: fit-content;
+  padding: 0px 20px 0px 20px;
 }

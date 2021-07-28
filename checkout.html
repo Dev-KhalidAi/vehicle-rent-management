@@ -37,9 +37,9 @@
             <div class="square1"></div>
         </div>
 
-        <div class="picked-item">
+        <div class="main-box">
             <div class="car-details">
-                <div class="car-name">You Picked<p> Mercedes C 300 Coupé</p> <a href=""> (Change?)</a></div>
+                <div class="main-title ">You Picked <p id="name"> Mercedes C 300 Coupé</p> <a id = "change" href=""> (Change?)</a></div>
             </div>
             <div class="car-details">
                <img src="./images/car2.jpeg.webp" alt="">
@@ -56,6 +56,34 @@
             <div class="buttons">
                 <button type="submit" class="btns">Check Availability</button>
                 <button type="submit" class="btns">Calculate Price</button>
+            </div>
+            <div class="info">
+                <p id="available">Available</p>
+                <p id="price">Total Price: 600 SAR</p>
+            </div>
+            <button class="checkout"> Checkout </button>
+        </div>
+        <div class="main-box">
+            <div class="car-details">
+                <div class="main-title title2"> Checkout </div>
+            </div>
+            <div class="fill-card">
+                <div class="title">
+                    <hr>
+                    <p>Fill Your Credit Card Info</p>
+                    <hr>
+                </div>
+                <form action="">
+                    <label for=""> Email </label><input type="text">
+                    <label for=""> Card details </label>
+                    <div class="test"><input maxlength="16" id="one" type="text" placeholder="Card Number"><i class="fab fa-cc-visa cards"></i></div>
+                    <div class="card-info">
+                        <input id="two" maxlength="5" type="text" placeholder="Expire date">
+                        <input maxlength="3" id="three" type="text" placeholder="CVV">
+                    </div>
+                    <label for=""> Name on card </label><input type="text">
+                    <button id="checkout-btn" type="submit">Checkout</button>
+                </form>
             </div>
         </div>
         <div class="seprator">
