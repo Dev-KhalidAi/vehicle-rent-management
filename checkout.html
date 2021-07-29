@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/checkout.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
     <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
-    <title>Check out</title>
+    <title>Checkout</title>
 </head>
 
 <body>
@@ -60,8 +60,9 @@
             <div class="info">
                 <p id="available">Available</p>
                 <p id="price">Total Price: 600 SAR</p>
+                <button class="checkout"> Checkout </button>
             </div>
-            <button class="checkout"> Checkout </button>
+
         </div>
         <div class="main-box">
             <div class="car-details">
@@ -69,21 +70,45 @@
             </div>
             <div class="fill-card">
                 <div class="title">
-                    <hr>
-                    <p>Fill Your Credit Card Info</p>
-                    <hr>
-                </div>
-                <form action="">
-                    <label for=""> Email </label><input type="text">
-                    <label for=""> Card details </label>
-                    <div class="test"><input maxlength="16" id="one" type="text" placeholder="Card Number"><i class="fab fa-cc-visa cards"></i></div>
-                    <div class="card-info">
-                        <input id="two" maxlength="5" type="text" placeholder="Expire date">
-                        <input maxlength="3" id="three" type="text" placeholder="CVV">
+                    <div class="checkout-details">
+                        <hr>
+                        <p>Checkout Summary</p>
+                        <hr>
                     </div>
-                    <label for=""> Name on card </label><input type="text">
-                    <button id="checkout-btn" type="submit">Checkout</button>
-                </form>
+                    <div class="fill-info">
+                        <hr>
+                        <p>Fill Your Credit Card Info</p>
+                        <hr>
+                    </div>
+                    
+                </div>
+                <div class="checkout-info-container">
+                    <div class="checkout-summ">
+                        <img src="./images/car2.jpeg.webp" alt="">
+                        <h5>Mercedes C 300 Coupé</h5>
+                        <hr>
+                        <h6>Pickup date: 10/9/2021</h6>
+                        <h6>Dropoff date: 10/9/2021</h6>
+                        <h6>Pickup Time: 6:00 PM</h6>
+                        <h6>Dropoff Time: 12:00 AM</h6>
+                        <hr>
+                        <h3>Total Price: 600 SAR</h3>
+                    </div>
+
+                    <div>
+                    <form action="">
+                        <label for=""> Email </label><input type="text">
+                        <label for=""> Card details </label>
+                        <div class="test"><input maxlength="16" id="one" type="text" placeholder="Card Number"><i class="fas fa-credit-card cards"></i></div>
+                        <div class="card-info">
+                            <input id="two" maxlength="5" type="text" placeholder="Expire date">
+                            <input maxlength="3" id="three" type="text" placeholder="CVV">
+                        </div>
+                        <label for=""> Name on card </label><input type="text">
+                        <button id="checkout-btn" type="submit">Checkout</button>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="seprator">
