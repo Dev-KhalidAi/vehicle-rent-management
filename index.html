@@ -10,20 +10,22 @@
     <title>Vehicle Rent Management System</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
+    <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
+
 
 </head>
 
 <body>
-    <div class="main-container">
+    <div  id ="move-to-home" class="main-container">
         <img class="main-background" src="./images/mercedes-benz.jpg.webp" alt="">
         <div class="main-section">
             <div class="header">
                 <img class="logo" src="./images/logo-white.png" alt="">
                 <ul>
-                    <li><a href="./index.html"> Home</a></li>
-                    <li>Vehicles</li>
-                    <li>How To Use</li>
-                    <li>About Us</li>
+                    <li><a href="#move-to-home"> Home</a></li>
+                    <li><a href="#move-to-vheicle">Vehicles</a></li>
+                    <li><a href="#move-to-how">How To Use </a></li>
+                    <li><a href="#move-to-about">About Us</a></li>
 
                 </ul>
                 <ul class="sign-in-up">
@@ -45,7 +47,7 @@
                 <a class="book-button" href="./booking.html"> Book Now</a>
             </section>
             <br><br>
-            <div class="seprator">
+            <div id ="move-to-vheicle"  class="seprator">
                 <div class="square1"></div>
                 <div class="line"></div>
                 <div class="square1"></div>
@@ -155,14 +157,48 @@
 
                 </div>
             </section>
-            <div class="seprator">
+            <div id ="move-to-how" class="seprator">
                 <div class="square1"></div>
                 <div class="line"></div>
                 <div class="square1"></div>
             </div>
             <section>
                 <div class="section-title">
-                    In Progress...
+                    How to Use
+                </div>
+                <div class="use-container">
+                    <div class="steps">
+                        <i id="icon1" class="fas fa-mouse"></i>
+                        <h5>Click on Book Now</h5>
+                        <p>From home section you will find <br> a white button "Book Now"</p>
+                    </div>
+                    <div class="steps">
+                        <i  id="icon1" class="fas fa-car"></i>
+                        <h5>Choose Car</h5>
+                        <p>From the listed car <br> choose the car that suits you</p>
+                    </div>
+                    <div class="steps">
+                        <i id="icon1" class="fas fa-shopping-cart"></i>
+                        <h5>Fill Info and Checkout</h5>
+                        <p>Fill the reservation information <br> and click on checkout then fill <br> your payments method info</p>
+                    </div>
+                </div>
+
+            </section>
+            <div id ="move-to-about" class="seprator">
+                <div class="square1"></div>
+                <div class="line"></div>
+                <div class="square1"></div>
+            </div>
+
+            <section>
+                <div class="about-us">
+                    <div  class="section-title">
+                        About Us
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptas, id adipisci distinctio ab, similique quos possimus ullam a, rerum tempore qui suscipit laborum quis et debitis praesentium autem voluptatum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe veniam explicabo consequuntur facere nesciunt? Vel aliquid debitis ex maxime? Iure placeat inventore, aut quod nisi repudiandae et eum qui sint.
+                    </p>
                 </div>
             </section>
             <div class="seprator">
@@ -230,6 +266,7 @@
             </div>
         </footer>
     </div>
+    <script src="./scripts/header-script.js"></script>
 </body>
 
 </html>

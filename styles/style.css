@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: EuclidCircular, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .main-background {
@@ -22,6 +23,8 @@
 
 .header {
   display: flex;
+  position: sticky;
+  top: -100px;
   height: 100px;
   width: 75%;
   margin: 0 auto;
@@ -32,6 +35,7 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  transition: 0.5s;
 }
 
 .main-section {
@@ -306,4 +310,119 @@ footer {
 
 #bars {
   display: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+  color: rgb(56, 56, 56);
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+table tr:first-child {
+  border-bottom-left-radius: 10px;
+  background-color: transparent;
+}
+
+table tr:first-child {
+  border-bottom-left-radius: 10px;
+  background-color: transparent;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  color: #4ed4d4;
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+#approve {
+  background: #1d8585;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#decline {
+  background: rgb(216, 59, 59);
+  border: none;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#approve:hover {
+  background: #2cb8b8;
+}
+
+#decline:hover {
+  background: rgb(243, 109, 109);
+}
+
+.use-container {
+  display: flex;
+
+  justify-content: center;
+}
+
+#icon1 {
+  color: white;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.steps {
+  padding: 0px 50px 0px 50px;
+  text-align: center;
+}
+.steps h5 {
+  color: #40c7c7;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.steps p {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.about-us p {
+  color: rgba(255, 255, 255, 0.76);
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  line-height: 2rem;
 }
