@@ -194,36 +194,26 @@ hr {
 .vheicle-container {
   color: rgba(0, 0, 0, 1) 100%;
   border: solid 1px white;
-  width: 250px;
+  width: 100%;
   height: fit-content;
-  border-radius: 15px;
+  padding-bottom: 20px;
+  border-radius: 10px;
   background: white;
   margin: 0 auto;
 }
 
 .car-image-container img {
-  width: 250px;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
   z-index: -1;
 }
 .test {
   position: absolute;
   width: 250px;
   height: 105.86px;
-  border-radius: 15px;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    180deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(29, 133, 133, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  opacity: 0.85;
+  border: none;
+  border-radius: 10px;
   transition: 0.7s;
-}
-
-.test:hover {
-  opacity: 0;
 }
 
 .vheicle-describtion {
