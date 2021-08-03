@@ -159,3 +159,19 @@ form label {
 .signup a:hover {
   text-decoration: underline;
 }
+
+.error-user {
+  color: rgb(209, 1, 1);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-pass {
+  color: rgb(209, 1, 1);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+  display: none;
+}

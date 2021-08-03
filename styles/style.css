@@ -77,6 +77,12 @@ li:hover {
   margin-left: auto;
 }
 
+.sign-in-up button {
+  background: none;
+  border: none;
+  color: white;
+}
+
 a {
   text-decoration: none;
   color: inherit;

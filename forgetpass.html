@@ -29,10 +29,10 @@
                 </div>
                 <form action="">
                     <div class="username">
-                        <label for="">Email</label><br><input type="text">
+                        <label for="">Email</label><br><input id="email" type="text">
                     </div><br>
-                
-                    <button type="submit"> Retrieve Password</button>
+                    <p class="error-user error-field">* This field required</p>
+                    <button type="submit" id="retrieve"> Retrieve Password</button>
                     <div class="signup">
                         <p>Login? </p><a href="./login.html">Login here</a>
                     </div>
@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+    <script src="./scripts/forgetpass-validation.js"></script>
 </body>
 
 </html>

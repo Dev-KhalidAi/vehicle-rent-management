@@ -29,13 +29,14 @@
                 </div>
                 <form action="">
                     <div class="username">
-                    <label for="">Username</label><br><input type="text">
+                    <label for="">Username</label><br><input id="username" type="text">
                     </div><br>
                     <div class="password">
-                    <label for="">Password</label><br><input type="password">
+                    <label for="">Password</label><br><input id="password" type="password">
                     <a href="./forgetpass.html">Forget Password?</a>
                     </div>
-                    <button type="submit"> Login</button>
+                    <p class="error-user">* All fields are required</p>
+                    <button id="login-button" type="submit"> Login</button>
                     <div class="signup">
                         <p>Don't have account? </p><a href="./signup.html">Signup here</a>
                     </div>
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
+    <script src="./scripts/login-validation.js"></script>
 </body>
 
 </html>

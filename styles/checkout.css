@@ -235,6 +235,7 @@ a:visited {
 
 #price {
   color: rgba(29, 133, 133, 1);
+  display: none;
 }
 
 #change {
@@ -259,6 +260,7 @@ a:visited {
   margin-top: 20px;
   transition: 0.2s;
   cursor: pointer;
+  display: none;
 }
 
 .checkout:hover {
@@ -527,4 +529,8 @@ footer {
 .title p {
   width: fit-content;
   padding: 0px 20px 0px 20px;
+}
+
+.checkout-box {
+  display: none;
 }
