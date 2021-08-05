@@ -73,7 +73,7 @@ session_start();
             <div class="cars-container">
                 <div class="cars">
                     <img src="./images/car1.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
+                    <button class="book-car" onclick="window.location.href='http://localhost/vehicle-rent-management/checkout.php';">Book Car</button>
                     <div class="car-details">
                         <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
                         <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>

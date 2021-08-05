@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION["name"])){
-    header('Location:http://localhost/vehicle-rent-management/info-redirection.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,47 +58,22 @@ if (!isset($_SESSION["name"])){
                     ?></a></li>
             </ul>
         </div>
-        <div class="section-title">
-            Edit Profile
-        </div>
+       
         
         <div class="seprator">
             <div class="square1"></div>
             <div class="line"></div>
             <div class="square1"></div>
         </div>
-
-        <div class="edit-profile">
-            <form action="">
-                <div class="entity">
-                    <p class="field-label">Firstname</p> <input type="text">
-                </div>
-                <div class="entity">
-                    <p class="field-label">Lastname</p> <input type="text">
-                </div>
-                <div class="entity">
-                    <p class="field-label">E-mail</p> <input type="text">
-                </div>
-                <div class="entity">
-                    <p class="field-label">Username</p> <input type="text">
-                </div>
-                <div class="entity">
-                    <p class="field-label">Password</p> <input type="password">
-                </div>
-                <div class="entity">
-                    <p class="field-label">Re-Password</p> <input type="password">
-                </div>
-                <button type="submit" class="edit-button">Save</button>
-            </form>
+         <div class="section-title warning">
+            You must be logged in to see this page
         </div>
         <div class="seprator">
             <div class="square1"></div>
             <div class="line"></div>
             <div class="square1"></div>
         </div>
-
     </div>
-
     <footer>
         <div class="main-footer">
             <div class="logo-footer">

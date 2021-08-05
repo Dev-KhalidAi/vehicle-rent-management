@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,27 +31,37 @@
                 <div class="login">
                     <p>Signup</p>
                 </div>
-                <form action="">
+                <form action="./add-user.php" method="post">
                     <div class="username">
-                        <label for="">Firstname</label><br><input id="firstname" type="text">
+                        <label for="">Firstname</label><br><input name ="firstname" id="firstname" type="text">
                     </div><br>
                     <div class="username">
-                        <label for="">Lastname</label><br><input id="lastname" type="text">
+                        <label for="">Lastname</label><br><input name ="lastname" id="lastname" type="text">
                     </div><br>
                     <div class="username">
-                        <label for="">E-mail</label><br><input id="email" type="text">
+                        <label for="">E-mail</label><br><input name ="email" id="email" type="email">
                     </div><br>
                     <div class="username">
-                        <label for="">Username</label><br><input id="username-signup" type="text">
+                        <label for="">Username</label><br><input name ="username" id="username-signup" type="text">
                     </div><br>
                     <div class="username">
-                        <label for="">Password</label><br><input id="password-signup" type="text">
+                        <label for="">Password</label><br><input name ="password" id="password-signup" type="password">
                     </div><br>
                     <div class="username">
-                        <label for="">Repeat Password</label><br><input id="re-password" type="text">
+                        <label for="">Repeat Password</label><br><input name ="rpassword" id="re-password" type="password">
                     </div><br>
-                    <p class="error-user error-field">* All fields are required</p>
-                    <p class="error-pass error-repass">* Passwords not matched</p>
+                    <p class="error-pass error-repass"><?php
+                    if(isset($_SESSION["errorEmpty"])){
+                        $error = $_SESSION["errorEmpty"];
+                        echo $error;
+                    }else if (isset($_SESSION["errorRequire"])){
+                        $error = $_SESSION["errorRequire"];
+                        echo $error;
+                    }else if (isset($_SESSION["errorExisted"])){
+                         $error = $_SESSION["errorExisted"];
+                        echo $error;
+                    }
+                    ?></p>
                     <button id="signup-button" type="submit"> Sign Up</button>
                     <div class="signup">
                         <p>Already have account? </p><a href="./login.html">Login here</a>
@@ -60,3 +74,9 @@
 </body>
 
 </html>
+
+<?php
+    unset($_SESSION["errorEmpty"]);
+    unset($_SESSION["errorRequire"]);
+    unset($_SESSION["errorExisted"]);
+?>

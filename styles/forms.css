@@ -165,7 +165,6 @@ form label {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
-  display: none;
 }
 
 .error-pass {
@@ -173,7 +172,6 @@ form label {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
-  display: none;
 }
 
 span {

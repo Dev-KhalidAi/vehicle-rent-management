@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION["name"])){
+    header('Location:http://localhost/vehicle-rent-management/info-redirection.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,14 +23,42 @@
         <div class="header">
             <img class="logo" src="./images/logo-white.png" alt="">
             <ul>
-                <li><a href="./index.html"> Home</a></li>
-                <li>Vehicles</li>
-                <li>How To Use</li>
-                <li>About Us</li>
+                <li><a href="./index.php"> Home</a></li>
+                <li><a href="./index.php#move-to-vheicle">Vehicles</a></li>
+                <li><a href="./index.php#move-to-how">How To Use </a></li>
+                <li><a href="./index.php#move-to-about">About Us</a></li>
             </ul>
             <ul class="sign-in-up">
-                <li id="signs"> <a href=""> <i class="far fa-user"> </i> Hello Khalid </a></li>
-                <li id="signs"> <a href=""> Sign out</a></li>
+                <li id="signs"> <a href=<?php
+                        if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "./edit-profile.php";
+                    }else{
+                        echo "./login.php";
+                    }
+                    ?> >
+                    <i class="far fa-user"> </i>
+                    <?php  if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Hello, $name";
+                    }else{
+                        echo "Signin";
+                    } ?> </a></li>
+                    <li id="signs"> <a href=<?php
+                    
+                     if(isset($_SESSION["name"])){
+                        echo "./login.php";
+                    }else{
+                        echo "./signup.php";
+                    }
+                    ?> > <?php
+                     if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Logout";
+                    }else{
+                        echo "Signup";
+                    }
+                    ?></a></li>
             </ul>
         </div>
         <div class="section-title">

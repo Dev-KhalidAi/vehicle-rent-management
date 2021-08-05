@@ -37,7 +37,7 @@ session_start();
                     </div><br>
                     <div class="password">
                     <label for="">Password</label><br><input name="password"id="password" type="password">
-                    <a href="./forgetpass.html">Forget Password?</a>
+                    <a href="./forgetpass.php">Forget Password?</a>
                     </div>
                      <?php
                     if(isset($_SESSION["error"])){
@@ -48,7 +48,7 @@ session_start();
                     <!-- <p class="error-user">* All fields are required</p> -->
                     <button id="login-button" type="submit"> Login</button>
                     <div class="signup">
-                        <p>Don't have account? </p><a href="./signup.html">Signup here</a>
+                        <p>Don't have account? </p><a href="./signup.php">Signup here</a>
                     </div>
                 </form>
             </div>

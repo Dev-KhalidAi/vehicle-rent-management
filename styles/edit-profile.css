@@ -253,3 +253,7 @@ footer {
 #bars {
   display: none;
 }
+
+.warning {
+  padding-top: 0;
+}
