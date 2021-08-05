@@ -17,7 +17,7 @@
                 <img src="./images/Logo.svg" alt="">
             </div>
             <div class="title">
-                <a href="./index.html"><img src="./images/logo-white.png" alt=""></a>
+                <a href="./index.php"><img src="./images/logo-white.png" alt=""></a>
                 <h5> Khalid's Rent Management System </h5>
                 <p> Signup Land Page </p>
             </div>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +24,36 @@
             <div class="header">
                 <img class="logo" src="./images/logo-white.png" alt="">
                 <ul class="sign-in-up">
-                    <li id="signs"> <a href="./login.html"> Dashboard </a></li>
-                    <li id="signs"> <a href="./signup.html"> Signout</a></li>
+                     <li id="signs"> <a href=<?php
+                        if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "./edit-profile.php";
+                    }else{
+                        echo "./login.php";
+                    }
+                    ?> >
+                    <i class="far fa-user"> </i>
+                    <?php  if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Hello, $name";
+                    }else{
+                        echo "Signin";
+                    } ?> </a></li>
+                    <li id="signs"> <a href=<?php
+                    
+                     if(isset($_SESSION["name"])){
+                        echo "./login.php";
+                    }else{
+                        echo "./signup.php";
+                    }
+                    ?> > <?php
+                     if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Logout";
+                    }else{
+                        echo "Signup";
+                    }
+                    ?></a></li>
                 </ul>
             </div>
             <section>

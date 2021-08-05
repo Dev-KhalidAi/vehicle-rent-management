@@ -175,3 +175,11 @@ form label {
   margin-top: 5px;
   display: none;
 }
+
+span {
+  color: rgb(209, 1, 1);
+  font-size: 12px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5px;
+}

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +21,7 @@
                 <img src="./images/Logo.svg" alt="">
             </div>
             <div class="title">
-                <a href="./index.html"><img src="./images/logo-white.png" alt=""></a>
+                <a href="./index.php"><img src="./images/logo-white.png" alt=""></a>
                 <h5> Khalid's Rent Management System </h5>
                 <p> Login Land Page </p>
             </div>
@@ -27,15 +31,21 @@
                 <div class="login">
                     <p>Login</p>
                 </div>
-                <form action="">
+                <form action="./authentication.php" method="post">
                     <div class="username">
-                    <label for="">Username</label><br><input id="username" type="text">
+                    <label for="">Username</label><br><input name="username" id="username" type="text">
                     </div><br>
                     <div class="password">
-                    <label for="">Password</label><br><input id="password" type="password">
+                    <label for="">Password</label><br><input name="password"id="password" type="password">
                     <a href="./forgetpass.html">Forget Password?</a>
                     </div>
-                    <p class="error-user">* All fields are required</p>
+                     <?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+                    ?>  
+                    <!-- <p class="error-user">* All fields are required</p> -->
                     <button id="login-button" type="submit"> Login</button>
                     <div class="signup">
                         <p>Don't have account? </p><a href="./signup.html">Signup here</a>
@@ -48,3 +58,8 @@
 </body>
 
 </html>
+
+<?php
+    unset($_SESSION["error"]);
+    session_destroy();
+?>

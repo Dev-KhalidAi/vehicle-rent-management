@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,7 @@
         <img class="main-background" src="./images/mercedes-benz.jpg.webp" alt="">
         <div class="main-section">
             <div class="header">
-                <a href="./index.html"><img class="logo" src="./images/logo-white.png" alt=""></a>
+                <a href="./index.php"><img class="logo" src="./images/logo-white.png" alt=""></a>
                 <ul>
                     <li><a href="#move-to-home"> Home</a></li>
                     <li><a href="#move-to-vheicle">Vehicles</a></li>
@@ -29,8 +32,36 @@
 
                 </ul>
                 <ul class="sign-in-up">
-                    <li id="signs">  <a href="./login.html"> Sign In </a></li>
-                    <li id="signs"> <a href="./signup.html"> Sign Up</a></li>
+                   <li id="signs"> <a href=<?php
+                        if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "./edit-profile.php";
+                    }else{
+                        echo "./login.php";
+                    }
+                    ?> >
+                    <i class="far fa-user"> </i>
+                    <?php  if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Hello, $name";
+                    }else{
+                        echo "Signin";
+                    } ?> </a></li>
+                    <li id="signs"> <a href=<?php
+                    
+                     if(isset($_SESSION["name"])){
+                        echo "./login.php";
+                    }else{
+                        echo "./signup.php";
+                    }
+                    ?> > <?php
+                     if(isset($_SESSION["name"])){
+                        $name = $_SESSION["name"];
+                        echo "Logout";
+                    }else{
+                        echo "Signup";
+                    }
+                    ?></a></li>
                 </ul>
             </div>
             <section>
@@ -44,7 +75,7 @@
                     exercitationem qui tenetur autem, quidem a sit tempore illum ex delectus corporis necessitatibus
                     fuga, voluptas sapiente enim!
                 </div>
-                <a class="book-button" href="./booking.html"> Book Now</a>
+                <a class="book-button" href="./booking.php"> Book Now</a>
             </section>
             <br><br>
             <div id ="move-to-vheicle"  class="seprator">
@@ -270,3 +301,4 @@
 </body>
 
 </html>
+
