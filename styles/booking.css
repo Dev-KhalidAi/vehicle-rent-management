@@ -134,10 +134,15 @@ a:visited {
 .cars {
   position: relative;
   background-color: white;
-  height: 250px;
+  height: fit-content;
   padding-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 50px rgba(7, 7, 7, 0.342);
+  transition: 0.2s;
+}
+
+.cars:hover {
+  transform: scale(1.05);
 }
 
 .cars img {

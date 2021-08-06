@@ -49,7 +49,7 @@ session_start();
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
-                        echo "./login.php";
+                        echo "./logout.php";
                     }else{
                         echo "./signup.php";
                     }

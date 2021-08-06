@@ -115,7 +115,6 @@ a:visited {
 }
 
 .section-title {
-  padding-top: 50px;
   font-size: 80px;
   color: rgba(255, 255, 255, 0.96);
   text-align: center;
@@ -126,135 +125,21 @@ a:visited {
   font-weight: 750;
 }
 
-.entity {
+.title-container {
+  height: 100%;
+
   display: flex;
-  justify-content: center;
-  width: 75%;
-  margin: 0 auto;
-  margin-top: 20px;
+  flex-direction: column;
+  align-content: center;
+  position: relative;
+  top: 100px;
 }
 
-.field-label {
-  display: flex;
-  padding-right: 20px;
-  color: white;
-  text-align: left;
-  align-items: center;
-  width: 100px;
-  font-weight: 300;
-}
-
-.entity input {
-  width: 200px;
-  padding: 10px;
-  padding-left: 15px;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-  margin-left: 20px;
-  background: rgba(0, 0, 0, 0.267);
-  color: #31b8b8;
-  font-size: 15px;
-}
-
-.edit-button {
-  padding: 10px 20px 10px 20px;
-  width: 150px;
-  border: none;
-  border-radius: 15px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 50px;
-  background: rgba(29, 133, 133, 1);
-  color: white;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.edit-button:hover {
-  background: rgb(49, 161, 161);
-}
-
-footer {
-  background: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
+.title-container i {
+  font-size: 120px;
+  margin-bottom: 20px;
   text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.main-footer {
-  width: 80%;
-}
-
-.logo-footer {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.logo-footer img {
-  width: 30px;
-  color: white;
-}
-
-#newsletter {
-  width: 270px;
-  height: 40px;
-  background: rgba(90, 90, 90, 0.26);
-  border: none;
-  border-radius: 10px;
-  padding: 0px 20px 0px 20px;
-  color: white;
-  outline: none;
-  font-size: 15px;
-}
-
-.socialmedia-icons {
-  display: flex;
-  justify-content: space-between;
-  width: 270px;
-  margin: 0 auto;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
-.links {
-  display: grid;
-  width: 600px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 30px;
-  margin: 0 auto;
-  margin-top: 30px;
-  font-size: 13px;
-}
-
-#line2 {
-  margin-top: 20px;
-}
-
-.link-item {
-  margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.719);
-  transition: 0.4s;
-}
-
-.link-item:hover {
-  color: white;
-  transition: 0.4s;
-  cursor: pointer;
-}
-
-.copyright {
-  margin-top: 60px;
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-
-#bars {
-  display: none;
-}
-
-.warning {
-  padding-top: 0;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 50px rgba(192, 219, 255, 0.48),
+    0 0 10px rgba(65, 120, 255, 0.24);
 }
