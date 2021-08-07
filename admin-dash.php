@@ -24,7 +24,7 @@ session_start();
             <div class="header">
                 <img class="logo" src="./images/logo-white.png" alt="">
                 <ul class="sign-in-up">
-                     <li id="signs"> <a href=<?php
+                    <li id="signs"> <a href=<?php
                         if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "./edit-profile.php";
@@ -42,7 +42,7 @@ session_start();
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
-                        echo "./login.php";
+                        echo "./logout.php";
                     }else{
                         echo "./signup.php";
                     }
@@ -54,7 +54,6 @@ session_start();
                         echo "Signup";
                     }
                     ?></a></li>
-                </ul>
             </div>
             <section>
                 

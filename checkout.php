@@ -29,7 +29,7 @@ if (!isset($_SESSION["name"])){
                 <li><a href="./index.php#move-to-about">About Us</a></li>
             </ul>
             <ul class="sign-in-up">
-                <li id="signs"> <a href=<?php
+                 <li id="signs"> <a href=<?php
                         if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "./edit-profile.php";
@@ -47,7 +47,7 @@ if (!isset($_SESSION["name"])){
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
-                        echo "./login.php";
+                        echo "./logout.php";
                     }else{
                         echo "./signup.php";
                     }

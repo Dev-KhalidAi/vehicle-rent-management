@@ -1,8 +1,29 @@
 <?php
 session_start();
-if (!isset($_SESSION["name"])){
+require('./dpconnection.php');
+
+if(isset($_SESSION["name"])){
+    $name = $_SESSION["name"];
+    $query = "SELECT * FROM users where firstname = '$name'";
+    $result = mysqli_query($conn, $query);
+    $count = mysqli_num_rows($result);  
+    if($count > 0){
+        $type = mysqli_fetch_array($result, MYSQLI_NUM);
+        $_SESSION['firstname'] = $type[1];
+        $_SESSION['lastname'] = $type[2];
+        $_SESSION['email'] = $type[4];
+        $_SESSION['username'] = $type[3];
+        $_SESSION['password'] = $type[5];
+        $_SESSION['repassword'] = $type[5];
+    
+    }else {
+       echo "Could not update".$conn -> error;
+    }
+}else{
     header('Location:http://localhost/vehicle-rent-management/info-redirection.php');
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +68,7 @@ if (!isset($_SESSION["name"])){
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
-                        echo "./login.php";
+                        echo "./logout.php";
                     }else{
                         echo "./signup.php";
                     }
@@ -72,24 +93,38 @@ if (!isset($_SESSION["name"])){
         </div>
 
         <div class="edit-profile">
-            <form action="">
+            <form action="./edit-profile-alter.php" method="post">
                 <div class="entity">
-                    <p class="field-label">Firstname</p> <input type="text">
+                    <p class="field-label">Firstname</p> <input name = "firstname" type="text" value = "<?php echo $_SESSION['firstname']?>">
                 </div>
                 <div class="entity">
-                    <p class="field-label">Lastname</p> <input type="text">
+                    <p class="field-label">Lastname</p> <input  name = "lastname" type="text" value = "<?php echo $_SESSION['lastname']?>">
                 </div>
                 <div class="entity">
-                    <p class="field-label">E-mail</p> <input type="text">
+                    <p class="field-label">E-mail</p> <input  name = "email" type="text" value = "<?php echo $_SESSION['email']?>">
                 </div>
                 <div class="entity">
-                    <p class="field-label">Username</p> <input type="text">
+                    <p class="field-label">Username</p> <input  name = "username" type="text" value = "<?php echo $_SESSION['username']?>">
                 </div>
                 <div class="entity">
-                    <p class="field-label">Password</p> <input type="password">
+                    <p class="field-label">Password</p> <input  name = "password" type="password" value = "<?php echo $_SESSION['password']?>">
                 </div>
                 <div class="entity">
-                    <p class="field-label">Re-Password</p> <input type="password">
+                    <p class="field-label">Re-Password</p> <input  name = "repassword" type="password" value = "<?php echo $_SESSION['repassword']?>">
+                </div>
+                <div class="errorMsg">
+                <?php  if (isset($_SESSION["errorExsit"])){
+                    $error = $_SESSION["errorExsit"];
+                    echo $error;} else if (isset($_SESSION["errorPassword"])){
+                    $error = $_SESSION["errorPassword"];
+                    echo $error;}
+                    ?>
+                </div>
+                <div class="sucMsg">
+                <?php  if (isset($_SESSION["success"])){
+                    $success = $_SESSION["success"];
+                    echo $success;}
+                    ?>
                 </div>
                 <button type="submit" class="edit-button">Save</button>
             </form>
@@ -164,3 +199,10 @@ if (!isset($_SESSION["name"])){
 </body>
 
 </html>
+
+
+<?php
+    unset($_SESSION["errorExsit"]);
+    unset($_SESSION["errorPassword"]);
+    unset($_SESSION["success"]);
+?>

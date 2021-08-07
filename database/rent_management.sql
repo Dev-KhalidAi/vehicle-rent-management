@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 05, 2021 at 10:12 AM
+-- Host: 127.0.0.1
+-- Generation Time: Aug 07, 2021 at 02:29 PM
 -- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,8 +106,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `admin`) VALUES
 (1, 'Khalid', 'Awlaqi', 'Khalid', 'imr_khaled@outlook.com', '12345', 1),
-(2, 'Waleed', 'Alharthi', 'willy', 'waleed@gmail.com', '11223344', 0),
-(3, 'Aziz', 'Bahassan', 'Aziz', 'aziz@gmail.com', '1122', 0);
+(2, 'Waleed', 'Alharthi', 'willy', 'willy@gmail.com', '11223344', 0),
+(3, 'Aziz', 'Bahassan', 'Aziz', 'Aziz@gmail.com', '1234', 0);
 
 --
 -- Indexes for dumped tables
@@ -144,7 +144,9 @@ ALTER TABLE `credit`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables

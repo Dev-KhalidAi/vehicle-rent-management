@@ -258,3 +258,17 @@ footer {
 .warning {
   padding-top: 0;
 }
+
+.errorMsg {
+  color: rgb(216, 17, 17);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sucMsg {
+  color: rgb(24, 189, 24);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
