@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('./dpconnection.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +73,7 @@ session_start();
         </div>
         <div class="test">
             <div class="cars-container">
-                <div class="cars">
+                <!-- <div class="cars">
                     <img src="./images/car1.jpeg.webp" alt="">
                     <button class="book-car" onclick="window.location.href='http://localhost/vehicle-rent-management/checkout.php';">Book Car</button>
                     <div class="car-details">
@@ -80,57 +82,27 @@ session_start();
                         <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
                         <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
                     </div>
-                </div>
-                <div class="cars">
-                    <img src="./images/car2.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
-                    <div class="car-details">
-                        <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
-                        <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>
-                        <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
-                        <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
-                    </div>
-                </div>
-                <div class="cars">
-                    <img src="./images/car3.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
-                    <div class="car-details">
-                        <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
-                        <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>
-                        <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
-                        <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
-                    </div>
-                </div>
-                <div class="cars">
-                    <img src="./images/car4.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
-                    <div class="car-details">
-                        <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
-                        <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>
-                        <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
-                        <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
-                    </div>
-                </div>
-                <div class="cars">
-                    <img src="./images/car1.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
-                    <div class="car-details">
-                        <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
-                        <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>
-                        <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
-                        <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
-                    </div>
-                </div>
-                <div class="cars">
-                    <img src="./images/car2.jpeg.webp" alt="">
-                    <button class="book-car">Book Car</button>
-                    <div class="car-details">
-                        <p class="details"><i class="fas fa-industry"></i> Brand: Mercedes</p>
-                        <p class="details"><i class="fas fa-car"></i> Name: C 300 Coupé</p>
-                        <p class="details"><i class="fas fa-history"></i> Availability: 6 remaining</p>
-                        <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
-                    </div>
-                </div>
+                </div> -->
+
+                <?php
+                    $query = "SELECT * FROM cars";
+                    $result = mysqli_query($conn, $query);
+                    while($cars = mysqli_fetch_array($result)){
+                        echo "<div class='cars'>";
+                        echo "<img src='$cars[5]'>";
+                        echo "<button class='book-car'>Book Car</button>";
+                        echo " 
+                            <div class='car-details'>
+                            <p class='details'><i class='fas fa-industry'></i> Brand: <span>$cars[2]</span></p>
+                            <p class='details'><i class='fas fa-car'></i> Name: <span>$cars[1]</span></p>
+                            <p class='details'><i class='fas fa-history'></i> Availability: <span>$cars[3]</span>remaining</p>
+                            <p class='details'><i class='fas fa-money-bill-wave'></i> Price: <span>$cars[4] SAR </span>\ day</p>
+                            </div>
+                            </div>
+                        ";
+                        }   
+                       
+                ?>
             </div>
             <div class="seprator2">
                 <div class="square1"></div>
@@ -196,5 +168,6 @@ session_start();
             </div>
         </footer>
     </div>
+    <script src="./scripts/booking.js"></script>
 </body>
 </html>

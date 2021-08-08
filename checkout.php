@@ -73,12 +73,12 @@ if (!isset($_SESSION["name"])){
 
         <div class="main-box details-box" >
             <div class="car-details">
-                <div class="main-title ">You Picked <p id="name"> Mercedes C 300 Coupé</p> <a id = "change" href="./booking.html"> (Change?)</a></div>
+                <div class="main-title ">You Picked <p id="name"> <?php echo $_GET["name"];?> </p> <a id = "change" href="./booking.php"> (Change?)</a></div>
             </div>
             <div class="car-details">
-               <img src="./images/car2.jpeg.webp" alt="">
+               <img src=<?php echo $_GET["image"];?> alt="">
             </div>
-            <div class="car-price">600SAR \ Day</div>
+            <div class="car-price"><?php echo $_GET["price"]; ?> SAR\ Day</div>
             <div class="car-details">
                 <div class="pickup-date"> <label>Pickup-Date:</label> <input class="date" type="date"></div>
                 <div class="pickup-date"> <label>Dropoff-Date:</label> <input class="date" type="date"></div>
@@ -118,16 +118,17 @@ if (!isset($_SESSION["name"])){
                 </div>
                 <div class="checkout-info-container">
                     <div class="checkout-summ">
-                        <img src="./images/car2.jpeg.webp" alt="">
-                        <h5>Mercedes C 300 Coupé</h5>
+                        <img src="<?php echo $_GET["image"];?> " alt="">
+                        <h5><?php echo $_GET["name"];?></h5>
                         <hr>
                         <h6>Pickup date: 10/9/2021</h6>
                         <h6>Dropoff date: 10/9/2021</h6>
                         <h6>Pickup Time: 6:00 PM</h6>
                         <h6>Dropoff Time: 12:00 AM</h6>
                         <hr>
-                        <h3>Total Price: 600 SAR</h3>
+                        <h3>Total Price: <?php echo $_GET["price"]; ?> SAR</h3>
                     </div>
+                    
 
                     <div>
                     <form action="">
@@ -140,6 +141,8 @@ if (!isset($_SESSION["name"])){
                         </div>
                         <label for=""> Name on card </label><input type="text">
                         <button id="checkout-btn" type="submit">Checkout</button>
+                        <button id="cancel-btn" >Cancel</button>
+
                     </form>
                     </div>
                 </div>

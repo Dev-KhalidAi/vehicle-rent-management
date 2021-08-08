@@ -534,3 +534,18 @@ footer {
 .checkout-box {
   display: none;
 }
+
+#cancel-btn {
+  margin-top: 5px;
+  padding: 10px 0px 10px 0px;
+  border: none;
+  background: rgb(161, 161, 161);
+  color: white;
+  border-radius: 7px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#cancel-btn:hover {
+  background: rgb(128, 128, 128);
+}

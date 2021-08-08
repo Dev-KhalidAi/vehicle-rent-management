@@ -1,5 +1,7 @@
 <?php
 session_start();
+require('./dpconnection.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,104 +89,28 @@ session_start();
                     Vheicles We Offer
                 </div>
                 <div class="vheicles-container">
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car1.jpeg.webp" alt="">
+                     <?php
+                    $query = "SELECT * FROM cars";
+                    $result = mysqli_query($conn, $query);
+                    while($cars = mysqli_fetch_array($result)){
+                        echo"
+                        
+                        <div class='vheicle-container'>
+                        <div class='car-image-container'>
+                            <div class='test'></div>
+                            <img src= $cars[5] alt=''>
                         </div>
-                        <div class="vheicle-describtion">
-                            Mercedes C 300 Coupé
+                        <div class='vheicle-describtion'>
+                            $cars[2] $cars[1]
                         </div>
-                        <div class="vhecle-year">
+                        <div class='vhecle-year'>
                             2021
                         </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car2.jpeg.webp" alt="">
                         </div>
-                        <div class="vheicle-describtion">
-                            Mercedes GLS 500 4MATIC
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car3.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes AMG E 53 4MATIC
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car4.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes C 300 Coupé
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car1.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes C 300 Coupé
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car2.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes GLS 500 4MATIC
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car3.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes AMG E 53 4MATIC
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-                    <div class="vheicle-container">
-                        <div class="car-image-container">
-                            <div class="test"></div>
-                            <img src="./images/car4.jpeg.webp" alt="">
-                        </div>
-                        <div class="vheicle-describtion">
-                            Mercedes C 300 Coupé
-                        </div>
-                        <div class="vhecle-year">
-                            2021
-                        </div>
-                    </div>
-
-
+                        
+                        ";
+                        };  
+                ?>
                 </div>
             </section>
             <div id ="move-to-how" class="seprator">

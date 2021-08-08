@@ -2,19 +2,19 @@
 session_start();
 require('./dpconnection.php');
 
-if(isset($_SESSION["name"])){
-    $name = $_SESSION["name"];
-    $query = "SELECT * FROM users where firstname = '$name'";
+if(isset($_SESSION["username"])){
+    $username = $_SESSION["username"];
+    $query = "SELECT * FROM users where username = '$username'";
     $result = mysqli_query($conn, $query);
     $count = mysqli_num_rows($result);  
     if($count > 0){
         $type = mysqli_fetch_array($result, MYSQLI_NUM);
-        $_SESSION['firstname'] = $type[1];
-        $_SESSION['lastname'] = $type[2];
-        $_SESSION['email'] = $type[4];
-        $_SESSION['username'] = $type[3];
-        $_SESSION['password'] = $type[5];
-        $_SESSION['repassword'] = $type[5];
+        $_SESSION['firstname'] = $type[0];
+        $_SESSION['lastname'] = $type[1];
+        $_SESSION['email'] = $type[3];
+        $_SESSION['username'] = $type[2];
+        $_SESSION['password'] = $type[4];
+        $_SESSION['repassword'] = $type[4];
     
     }else {
        echo "Could not update".$conn -> error;

@@ -3,6 +3,8 @@ var checkAvailable = document
   .addEventListener("click", showAvailablity);
 
 var availablity = document.getElementById("available");
+var cancelButton = document.getElementById("cancel-btn");
+cancelButton.addEventListener("click", backToBook);
 var checkoutButton = document.querySelector(".checkout");
 var checkoutBox = document.querySelector(".checkout-box");
 var calculatePrice = document
@@ -27,4 +29,11 @@ function showPrice() {
 function openCheckout() {
   checkoutBox.style.display = "block";
   detailsBox.style.display = "none";
+}
+
+function backToBook(index) {
+  if (confirm("Are you sure you want to cancel (info will not be saved)")) {
+    location.href = "./booking.php";
+  }
+  index.preventDefault();
 }

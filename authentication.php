@@ -10,9 +10,9 @@ if(isset($_POST)){
     $count = mysqli_num_rows($result);  
     if($count == 1){
         $type = mysqli_fetch_array($result, MYSQLI_NUM);
-        $_SESSION['name'] = $type[1];
-        $_SESSION['username'] = $type[3];
-        $_SESSION['role'] = $type[6];
+        $_SESSION['name'] = $type[0];
+        $_SESSION['username'] = $type[2];
+        $_SESSION['role'] = $type[5];
         if($type[6] == 1){
             header('Location:http://localhost/vehicle-rent-management/admin-dash.php');
         }else{
