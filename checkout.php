@@ -2,6 +2,8 @@
 session_start();
 if (!isset($_SESSION["name"])){
     header('Location:http://localhost/vehicle-rent-management/info-redirection.php');
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -80,19 +82,44 @@ if (!isset($_SESSION["name"])){
             </div>
             <div class="car-price"><?php echo $_GET["price"]; ?> SAR\ Day</div>
             <div class="car-details">
-                <div class="pickup-date"> <label>Pickup-Date:</label> <input class="date" type="date"></div>
-                <div class="pickup-date"> <label>Dropoff-Date:</label> <input class="date" type="date"></div>
+                <div class="pickup-date"> <label>Pickup-Date:</label> <input class="date pick" type="date"></div>
+                <div class="pickup-date"> <label>Dropoff-Date:</label> <input class="date drop" type="date"></div>
             </div>
             <div class="car-details">
-                <div class="pickup-date"><label>Pickup-Time:</label> <input class="date" type="time"></div>
-                <div class="pickup-date"><label> Dropoff-Time:</label>  <input class="date" type="time"></div>
+                <div class="pickup-date"><label>Pickup-Time:</label> <input class="date pickTime" type="time"></div>
+                <div class="pickup-date"><label> Dropoff-Time:</label>  <input class="date dropTime" type="time"></div>
             </div>
+            <div class="error-msg fill">* Please fill all the blanks</div>
+            <div class="error-msg correct">* Please check pickup and dropoff date</div>
+
             <div class="buttons">
                 <button type="submit" class="btns" id = "availablity-button">Check Availability</button>
                 <button type="submit" class="btns" id = "price-button">Calculate Price</button>
             </div>
             <div class="info">
-                <p id="available">Available</p>
+                <p id="available">
+
+                    <?php
+                        require('./dpconnection.php');
+                        $fullname = $_GET["name"];
+                        $name = trim(str_replace('Mercedes','',$fullname));
+                        $query = "SELECT availablity FROM cars WHERE name = '$name'";
+                        $result = mysqli_query($conn, $query);
+                        if ($result){
+                            $cars = mysqli_fetch_assoc($result);
+                            if ($cars['availablity'] >= 1 ){
+                                echo "Available";
+                            }else {
+                                echo "<span id='not-available'>Not available</span>";
+                            }
+                        }else{
+                            echo "srdbha";
+                        }
+
+                    ?>
+
+
+                </p>
                 <p id="price">Total Price: 600 SAR</p>
                 <button class="checkout"> Checkout </button>
             </div>
@@ -121,18 +148,17 @@ if (!isset($_SESSION["name"])){
                         <img src="<?php echo $_GET["image"];?> " alt="">
                         <h5><?php echo $_GET["name"];?></h5>
                         <hr>
-                        <h6>Pickup date: 10/9/2021</h6>
-                        <h6>Dropoff date: 10/9/2021</h6>
-                        <h6>Pickup Time: 6:00 PM</h6>
-                        <h6>Dropoff Time: 12:00 AM</h6>
+                        <h6>Pickup date: <span id="pickDateSumm">  </span></h6>
+                        <h6>Dropoff date: <span id="dropDateSumm">  </span> </h6>
+                        <h6>Pickup Time: <span id="pickTimeSumm">  </span></h6>
+                        <h6>Dropoff Time: <span id="dropTimeSumm">  </span></h6>
                         <hr>
-                        <h3>Total Price: <?php echo $_GET["price"]; ?> SAR</h3>
+                        <h3>Total Price: <span class="totalPrice">1400</span> SAR</h3>
                     </div>
                     
 
                     <div>
                     <form action="">
-                        <label for=""> Email </label><input type="text">
                         <label for=""> Card details </label>
                         <div class="test"><input maxlength="16" id="one" type="text" placeholder="Card Number"><i class="fas fa-credit-card cards"></i></div>
                         <div class="card-info">

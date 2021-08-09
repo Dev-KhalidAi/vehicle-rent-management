@@ -83,7 +83,6 @@ require('./dpconnection.php');
                         <p class="details"><i class="fas fa-money-bill-wave"></i> Price: 650\day</p>
                     </div>
                 </div> -->
-
                 <?php
                     $query = "SELECT * FROM cars";
                     $result = mysqli_query($conn, $query);
@@ -95,13 +94,12 @@ require('./dpconnection.php');
                             <div class='car-details'>
                             <p class='details'><i class='fas fa-industry'></i> Brand: <span>$cars[2]</span></p>
                             <p class='details'><i class='fas fa-car'></i> Name: <span>$cars[1]</span></p>
-                            <p class='details'><i class='fas fa-history'></i> Availability: <span>$cars[3]</span>remaining</p>
+                            <p class='details'><i class='fas fa-history'></i> Availability: <span>$cars[3]</span> remaining</p>
                             <p class='details'><i class='fas fa-money-bill-wave'></i> Price: <span>$cars[4] SAR </span>\ day</p>
                             </div>
                             </div>
                         ";
-                        }   
-                       
+                        }        
                 ?>
             </div>
             <div class="seprator2">

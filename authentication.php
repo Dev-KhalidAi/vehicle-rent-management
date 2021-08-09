@@ -13,7 +13,7 @@ if(isset($_POST)){
         $_SESSION['name'] = $type[0];
         $_SESSION['username'] = $type[2];
         $_SESSION['role'] = $type[5];
-        if($type[6] == 1){
+        if($type[5] == 1){
             header('Location:http://localhost/vehicle-rent-management/admin-dash.php');
         }else{
             header('Location:http://localhost/vehicle-rent-management/index.php');
