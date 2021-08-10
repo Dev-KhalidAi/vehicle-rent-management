@@ -7,7 +7,7 @@ window.onscroll = () => {
     header.style.padding = "0px 50px 0px 50px";
     header.style.borderRadius = " 0px 0px 20px 20px";
     header.style.top = "0";
-  } else {
+  } else if (this.scrollY == 0) {
     header.style.top = "-100px";
     header.style.background = "";
     header.style.width = "";

@@ -160,7 +160,7 @@ if (!isset($_SESSION["name"])){
                     <div>
                     <form action="./addto-checkout.php" method="post">
                         <label for=""> Card details </label>
-                        <div class="test"><input name = "card-number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" id="one" type="number" placeholder="Card Number" required><i class="fas fa-credit-card cards"></i></div>
+                        <div class="test"><input name = "card-number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" id="one" type="number" placeholder="xxxx xxxx xxxx xxxx" required><i class="fas fa-credit-card cards"></i></div>
                         <div class="card-info">
                             <input name = "exp-date" id="two" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="5" type="text" placeholder="Expire date" required>
                             <input name = "ccv" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" id="three" type="number" placeholder="CVV" required>
