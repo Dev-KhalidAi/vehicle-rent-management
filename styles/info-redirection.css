@@ -143,3 +143,11 @@ a:visited {
   text-shadow: 0 0 50px rgba(192, 219, 255, 0.48),
     0 0 10px rgba(65, 120, 255, 0.24);
 }
+
+#success {
+  color: #2bcece;
+}
+
+#check {
+  color: #2bcece;
+}

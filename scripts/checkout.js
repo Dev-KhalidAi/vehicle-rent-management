@@ -26,7 +26,11 @@ var pickDateSumm = document.querySelector("#pickDateSumm");
 var dropDateSumm = document.querySelector("#dropDateSumm");
 var pickTimeSumm = document.querySelector("#pickTimeSumm");
 var dropTimeSumm = document.querySelector("#dropTimeSumm");
+var editButton = document.querySelector("#edit-btn");
+editButton.addEventListener("click", backToDetails);
 
+var checkoutSubmit = document.querySelector("#checkout-btn");
+checkoutSubmit.addEventListener("click", fillInfo);
 function showAvailablity() {
   // availablity.style.display = "block";
   // checkoutButton.style.display = "block";
@@ -80,14 +84,21 @@ function showPrice() {
   }
 }
 
-function openCheckout() {
+function openCheckout(index) {
   pickDateSumm.innerHTML = pickDate.value;
   dropDateSumm.innerHTML = dropDate.value;
   pickTimeSumm.innerHTML = pickTime.value;
   dropTimeSumm.innerHTML = dropTime.value;
+  document.getElementById("pickdate").value = pickDate.value;
+  document.getElementById("dropdate").value = dropDate.value;
+  document.getElementById("picktime").value = pickTime.value;
+  document.getElementById("droptime").value = dropTime.value;
+  document.getElementById("droptime").value = dropTime.value;
   checkoutBox.style.display = "block";
   detailsBox.style.display = "none";
   totalPrice.innerHTML = diffDays * parseInt(carPrice.textContent);
+  index.preventDefault();
+  console.log(window.location.href);
 }
 
 function backToBook(index) {
@@ -95,4 +106,20 @@ function backToBook(index) {
     location.href = "./booking.php";
   }
   index.preventDefault();
+}
+
+function backToDetails(index2) {
+  checkoutBox.style.display = "none";
+  detailsBox.style.display = "block";
+  index2.preventDefault();
+  availablity.style.display = "none";
+  checkoutButton.style.display = "none";
+  price.style.display = "none";
+}
+
+function fillInfo() {
+  document.getElementById("pricedb").value =
+    document.querySelector(".totalPrice").textContent;
+  document.getElementById("carname").value =
+    document.querySelector(".carname").textContent;
 }

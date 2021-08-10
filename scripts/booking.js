@@ -1,11 +1,11 @@
 var bookNowButton = document.getElementsByClassName("book-car");
 // bookNowButton.addEventListener("click", bookNow);
-
 for (var j = 0; j < bookNowButton.length; j++) {
   bookNowButton[j].addEventListener("click", bookNow);
 }
 var namee = document.querySelector(".name");
 var carsInfo = [];
+
 function bookNow(index) {
   for (var i = 0; i < index.target.nextElementSibling.children.length; i++) {
     carsInfo[i] =

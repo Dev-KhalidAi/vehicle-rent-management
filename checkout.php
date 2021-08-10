@@ -146,27 +146,34 @@ if (!isset($_SESSION["name"])){
                 <div class="checkout-info-container">
                     <div class="checkout-summ">
                         <img src="<?php echo $_GET["image"];?> " alt="">
-                        <h5><?php echo $_GET["name"];?></h5>
+                        <h5 class="carname"><?php echo $_GET["name"];?></h5>
                         <hr>
                         <h6>Pickup date: <span id="pickDateSumm">  </span></h6>
                         <h6>Dropoff date: <span id="dropDateSumm">  </span> </h6>
                         <h6>Pickup Time: <span id="pickTimeSumm">  </span></h6>
                         <h6>Dropoff Time: <span id="dropTimeSumm">  </span></h6>
                         <hr>
-                        <h3>Total Price: <span class="totalPrice">1400</span> SAR</h3>
+                        <h3>Total Price: <span class="totalPrice"></span> SAR</h3>
                     </div>
                     
 
                     <div>
-                    <form action="">
+                    <form action="./addto-checkout.php" method="post">
                         <label for=""> Card details </label>
-                        <div class="test"><input maxlength="16" id="one" type="text" placeholder="Card Number"><i class="fas fa-credit-card cards"></i></div>
+                        <div class="test"><input name = "card-number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" id="one" type="number" placeholder="Card Number" required><i class="fas fa-credit-card cards"></i></div>
                         <div class="card-info">
-                            <input id="two" maxlength="5" type="text" placeholder="Expire date">
-                            <input maxlength="3" id="three" type="text" placeholder="CVV">
+                            <input name = "exp-date" id="two" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="5" type="text" placeholder="Expire date" required>
+                            <input name = "ccv" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" id="three" type="number" placeholder="CVV" required>
                         </div>
-                        <label for=""> Name on card </label><input type="text">
+                        <label for=""> Name on card </label><input name = "name-card" type="text" required>
+                        <input id = "pickdate" type="hidden" name = "pickdate" value = ''>
+                        <input id = "dropdate" type="hidden" name = "dropdate" value = ''>
+                        <input id = "picktime" type="hidden" name = "picktime" value = ''>
+                        <input id = "droptime" type="hidden" name = "droptime" value = ''>
+                        <input id = "pricedb" type="hidden" name = "pricedb" value = ''>
+                        <input id = "carname" type="hidden" name = "carname" value = ''>
                         <button id="checkout-btn" type="submit">Checkout</button>
+                        <button id="edit-btn" >Edit booking details</button>
                         <button id="cancel-btn" >Cancel</button>
 
                     </form>
