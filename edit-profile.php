@@ -50,21 +50,30 @@ if(isset($_SESSION["username"])){
                 <li><a href="./index.php#move-to-about">About Us</a></li>
             </ul>
             <ul class="sign-in-up">
-                <li id="signs"> <a href=<?php
+               
+                   <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "./edit-profile.php";
                     }else{
                         echo "./login.php";
                     }
-                    ?> >
-                    <i class="far fa-user"> </i>
+                    ?>>
+                    <i class="far fa-user"></i>
                     <?php  if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "Hello, $name";
                     }else{
                         echo "Signin";
-                    } ?> </a></li>
+                    }?></a></li>
+
+                     <?php if (isset($_SESSION['name'])){
+                        echo "<li id='signs'><a href='./orders.php'";
+                        echo "<i class='fas fa-shopping-cart'></i>";
+                        echo " Your Orders";
+                    }?></a></li>
+
+                   
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){

@@ -11,7 +11,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rent Management System</title>
+    <title>Your Orders</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
     <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
@@ -25,7 +25,15 @@ session_start();
         <div class="main-section">
             <div class="header">
                 <img class="logo" src="./images/logo-white.png" alt="">
-                <ul class="sign-in-up">     
+                 <ul>
+                    <li><a href="./index.php#move-to-home"> Home</a></li>
+                    <li><a href="./index.php#move-to-vheicle">Vehicles</a></li>
+                    <li><a href="./index.php#move-to-how">How To Use </a></li>
+                    <li><a href="./index.php#move-to-about">About Us</a></li>
+
+                </ul>
+                <ul class="sign-in-up">
+                    
                    <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
@@ -40,6 +48,12 @@ session_start();
                         echo "Hello, $name";
                     }else{
                         echo "Signin";
+                    }?></a></li>
+
+                     <?php if (isset($_SESSION['name'])){
+                        echo "<li id='signs'><a href='./orders.php'";
+                        echo "<i class='fas fa-shopping-cart'></i>";
+                        echo " Your Orders";
                     }?></a></li>
 
                    
@@ -60,62 +74,46 @@ session_start();
                     ?></a></li>
             </div>
             <section>
-             <div class="section-title admin">
-                    Admin Dashboard
-                </div>   
-            <div class="seprator sep-admin">
+                
+            <div class="seprator">
                 <div class="square1"></div>
                 <div class="line"></div>
                 <div class="square1"></div>
             </div>
             <section>
-                
-                  
-                    <!-- <tr>
-                        <td>Mohammed Awlaqi</td>
-                        <td>Mo1997</td>
-                        <td>Mercedes</td>
-                        <td>10/9/1997</td>
-                        <td>10/9/1997</td>
-                        <td><button id="approve">Approve</button> <button id="decline">Decline</button></td>
-                    </tr> -->
+                <div class="section-title">
+                  Your Orders
+                </div>
+                <table>
+                    <tr>
+                        <th>Car Name</th>
+                        <th>Pickup-Date</th>
+                        <th>Dropoff-Date</th>
+                        <th>Total Price</th>
+                        <th>Order Status</th>
+                    </tr>
+
                     <?php
                     require('./dpconnection.php');
                     $username = $_SESSION['username'];
-                    $query = "SELECT * FROM checkout WHERE accepted = 2";
+                    $query = "SELECT * FROM checkout WHERE user_username = '$username'";
                     $result = mysqli_query($conn, $query);
-                    $count = mysqli_num_rows($result);
-                    if ($count == 0){
-                        echo "<span id = 'no-orders'>You have no orderes to approve/decline</span>"; 
-                    }else{ 
-                     ?> 
-                      <table>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Username</th>
-                        <th>Car name</th>
-                        <th>Pickup-Date</th>
-                        <th>Dropoff-Date</th>
-                        <th>Aprove\Decline</th>
-                    </tr>    <?php  
                     while($order = mysqli_fetch_array($result)){
-                        $query2 = "SELECT * FROM users where username = '$order[0]'";
-                        $result2 = mysqli_query($conn, $query2); 
-                        $name = mysqli_fetch_array($result2, MYSQLI_NUM);
                         echo "<tr>";
-                        echo "<td>$name[0] $name[1]</td>";
-                        echo "<td>$order[0]</td>";
                         echo "<td>Mercedes $order[7]</td>";
                         echo "<td>$order[1]</td>";
                         echo "<td>$order[2]</td>";
-                        echo "<form action='./approve-orders.php' method = 'post'>
-                        <input name = 'username' type='hidden' value = '$order[0]'>
-                        <input name = 'carname' type='hidden' value = '$order[7]'>
-                        <td><button type = 'submit' id='approve' name = 'approve'>Approve</button> <button  name = 'decline' type = 'submit'id='decline'>Decline</button></td>
-                        </form>";
-                         echo "</tr>";
-                    }}
-                    ?>     
+                        echo "<td>$order[5]</td>";
+                        if ($order[8] == 2){
+                            echo "<td><span id='waiting'>Waiting for Approval</span></td>";
+                        }else if ($order[8] == 1){
+                            echo "<td><span id='approved'>Approved</span></td>";
+                        }else{
+                            echo "<td><span id='declined'>Declined</span></td>";
+                        } echo "</tr>";}
+                    ?>
+                    
+
                 </table>
             </section>
 

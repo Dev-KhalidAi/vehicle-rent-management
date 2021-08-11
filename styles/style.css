@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: EuclidCircular, Arial, Helvetica, sans-serif;
+  font-family: EuclidCircular, Arial, Helvetica, sans-serif !important;
   scroll-behavior: smooth;
 }
 
@@ -426,4 +426,46 @@ th {
   margin: 0 auto;
   margin-top: 30px;
   line-height: 2rem;
+}
+
+#waiting {
+  background: rgba(255, 227, 66, 0.781);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+#approved {
+  background: rgba(93, 238, 88, 0.781);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+#declined {
+  background: rgba(209, 55, 44, 0.781);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+#no-orders {
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.96);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 50px rgba(192, 219, 255, 0.48),
+    0 0 10px rgba(65, 120, 255, 0.24);
+  font-size: 2rem;
+  font-weight: 750;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.sep-admin {
+  padding-top: 0px;
+}
+
+.admin {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }

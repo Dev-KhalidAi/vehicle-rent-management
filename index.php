@@ -11,11 +11,9 @@ require('./dpconnection.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rent Management System</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
-    <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
-
+<script src="https://kit.fontawesome.com/78756aeda5.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -33,21 +31,31 @@ require('./dpconnection.php');
 
                 </ul>
                 <ul class="sign-in-up">
-                   <li id="signs"> <a href=<?php
+                   
+
+                   <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "./edit-profile.php";
                     }else{
                         echo "./login.php";
                     }
-                    ?> >
-                    <i class="far fa-user"> </i>
+                    ?>>
+                    <i class="far fa-user"></i>
                     <?php  if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
                         echo "Hello, $name";
                     }else{
                         echo "Signin";
-                    } ?> </a></li>
+                    }?></a></li>
+
+                     <?php if (isset($_SESSION['name'])){
+                        echo "<li id='signs'><a href='./orders.php'";
+                        echo "<i class='fas fa-shopping-basket'></i>";
+                        echo " Your Orders";
+                    }?></a></li>
+
+                   
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
@@ -226,4 +234,3 @@ require('./dpconnection.php');
 </body>
 
 </html>
-
