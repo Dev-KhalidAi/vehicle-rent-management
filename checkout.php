@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["name"])){
-    header('Location:http://localhost/vehicle-rent-management/info-redirection.php');
+    header('Location:info-redirection.php');
 
 
 }
@@ -32,7 +32,7 @@ if (!isset($_SESSION["name"])){
             </ul>
             <ul class="sign-in-up">
                  
-              <li id="signs"><a href=<?php
+               <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                             $name = $_SESSION["name"];
                             echo "./edit-profile.php";
@@ -48,7 +48,8 @@ if (!isset($_SESSION["name"])){
                         echo "Signin";
                     }?></a></li>
                     <?php
-                    if($_SESSION["role"]==1){
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
                     echo "<li id='signs'><a href=";
                     
                             echo "./admin-dash.php
@@ -56,7 +57,7 @@ if (!isset($_SESSION["name"])){
                             <span id = 'orders'>Admin Dashboard</span></a></li>";
                         }else{
                             echo "";
-                        }
+                        }}
                     ?>
           
                      <?php if (isset($_SESSION['name'])){

@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,10 +18,10 @@
     <div class="container">
         <div class="left-side">
             <div class="logo-back">
-                <img src="./images/logo-white.png" alt="">
+                <img src="./images/Logo.svg" alt="">
             </div>
             <div class="title">
-                <a href="./index.html"><img src="./images/logo-white.png" alt=""></a>
+                <a href="./index.php"><img src="./images/logo-white.png" alt=""></a>
                 <h5> Khalid's Rent Management System </h5>
                 <p> Forget Password Landing Page </p>
             </div>
@@ -29,9 +33,8 @@
                 </div>
                 <form action="">
                     <div class="username">
-                        <label for="">Email</label><br><input id="email" type="text">
+                        <label for="">Email</label><br><input id="email" type="email" required>
                     </div><br>
-                    <p class="error-user error-field">* This field required</p>
                     <button type="submit" id="retrieve"> Retrieve Password</button>
                     <div class="signup">
                         <p>Login? </p><a href="./login.html">Login here</a>
@@ -44,3 +47,7 @@
 </body>
 
 </html>
+
+<?php
+    unset($_SESSION["error"]);
+?>

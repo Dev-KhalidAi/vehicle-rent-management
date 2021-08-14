@@ -15,18 +15,18 @@ if(isset($_POST)){
          if ($pass == $repass and $pass != "" and $repass != ""){
         $query = "INSERT INTO users (firstname, lastname, username, email, password, admin) VALUES ('$fname', '$lname', '$username', '$email', '$pass', '$admin')";
         if ($conn->query($query) === TRUE) {
-        header('Location:http://localhost/vehicle-rent-management/login.php');
+        header('location:login.php');
         } else {
         $_SESSION['errorExisted']="* User is already existed"; 
-        header("Location:http://localhost/vehicle-rent-management/signup.php");
+        header("location:signup.php");
         }
     }else {
         $_SESSION['errorEmpty']="* Passwords not matched"; 
-        header("Location:http://localhost/vehicle-rent-management/signup.php");
+        header("location:signup.php");
     }
     } else {
         $_SESSION['errorRequire']="* All fields required"; 
-        header("Location:http://localhost/vehicle-rent-management/signup.php");
+        header("location:signup.php");
     }
 }
 ?>

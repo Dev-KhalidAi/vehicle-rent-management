@@ -14,10 +14,10 @@ if(isset($_POST)){
     // $password == "" && $repassword == ""
     if ($firstname =="" || $lastname =="" || $email =="" || $username =="" || $password =="" || $repassword ==""){
         $_SESSION ['errorPassword'] = "* Fill the blank fields";
-        header('Location:http://localhost/vehicle-rent-management/edit-profile.php');
+        header('Location:edit-profile.php');
     } else if ($password != $repassword){
         $_SESSION ['errorPassword'] = "* Passwords not matched";
-        header('Location:http://localhost/vehicle-rent-management/edit-profile.php');
+        header('Location:edit-profile.php');
     }else {
     $sql  = "UPDATE users
     SET firstname='$firstname',
@@ -28,12 +28,12 @@ if(isset($_POST)){
         admin = '$admin'
     WHERE username = '$currUsername'";
     if ($conn->query($sql) === TRUE){
-        header('Location:http://localhost/vehicle-rent-management/edit-profile.php');
+        header('Location:edit-profile.php');
         $_SESSION ['success'] = "* Your profile updated successfully";
         $_SESSION['name'] = $firstname;
 
     }else{
-        header('Location:http://localhost/vehicle-rent-management/edit-profile.php');
+        header('Location:edit-profile.php');
         $_SESSION ['errorExsit'] = "* Username or Email is existed";
     }
 }

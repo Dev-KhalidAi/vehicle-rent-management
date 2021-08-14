@@ -27,7 +27,7 @@ require('./dpconnection.php');
         
             </ul>
             <ul class="sign-in-up">
-               <li id="signs"><a href=<?php
+                <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                             $name = $_SESSION["name"];
                             echo "./edit-profile.php";
@@ -43,7 +43,8 @@ require('./dpconnection.php');
                         echo "Signin";
                     }?></a></li>
                     <?php
-                    if($_SESSION["role"]==1){
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
                     echo "<li id='signs'><a href=";
                     
                             echo "./admin-dash.php
@@ -51,7 +52,7 @@ require('./dpconnection.php');
                             <span id = 'orders'>Admin Dashboard</span></a></li>";
                         }else{
                             echo "";
-                        }
+                        }}
                     ?>
           
                      <?php if (isset($_SESSION['name'])){

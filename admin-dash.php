@@ -26,7 +26,7 @@ session_start();
             <div class="header">
                 <img class="logo" src="./images/logo-white.png" alt="">
                 <ul class="sign-in-up">     
-                  <li id="signs"><a href=<?php
+                   <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
                             $name = $_SESSION["name"];
                             echo "./edit-profile.php";
@@ -42,7 +42,8 @@ session_start();
                         echo "Signin";
                     }?></a></li>
                     <?php
-                    if($_SESSION["role"]==1){
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
                     echo "<li id='signs'><a href=";
                     
                             echo "./admin-dash.php
@@ -50,7 +51,7 @@ session_start();
                             <span id = 'orders'>Admin Dashboard</span></a></li>";
                         }else{
                             echo "";
-                        }
+                        }}
                     ?>
           
                      <?php if (isset($_SESSION['name'])){
