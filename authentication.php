@@ -15,9 +15,9 @@ if(isset($_POST)){
         $_SESSION['role'] = $type[5];
         $_SESSION['email'] = $type[3];
         if($type[5] == 1){
-            header('Location:http://localhost/vehicle-rent-management/admin-dash.php');
+            header('location:index.php');
         }else{
-            header('Location:http://localhost/vehicle-rent-management/index.php');
+            header('location:index.php');
         }
     }else{
         $_SESSION['error']="Incorrect Username or Password."; 

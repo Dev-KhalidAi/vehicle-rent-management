@@ -47,7 +47,8 @@ require('./dpconnection.php');
                         echo "Signin";
                     }?></a></li>
                     <?php
-                    if($_SESSION["role"]==1){
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
                     echo "<li id='signs'><a href=";
                     
                             echo "./admin-dash.php
@@ -55,7 +56,20 @@ require('./dpconnection.php');
                             <span id = 'orders'>Admin Dashboard</span></a></li>";
                         }else{
                             echo "";
-                        }
+                        }}
+                    ?>
+
+                      <?php
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./add-car.php
+                            <i class='far fa-plus-circle'></i>
+                            <span id = 'orders'>Add Car</span></a></li>";
+                        }else{
+                            echo "";
+                        }}
                     ?>
           
                      <?php if (isset($_SESSION['name'])){

@@ -31,7 +31,7 @@ if(isset($_POST)){
     ('$username', '$pickdate', '$dropdate', '$picktime', '$droptime', '$totalprice', '$email', '$carname', $accepted )";
 
     if ($conn->query($query_credit) === TRUE && $conn->query($query_checkout)) {
-       header('Location:http://localhost/vehicle-rent-management/success-info.php');
+       header('location:success-info.php');
     }else {
 
         printf("Errormessage: %s\n", $mysqli->error);
