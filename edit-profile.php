@@ -35,7 +35,7 @@ if(isset($_SESSION["username"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/edit-profile.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
-    <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <title>Edit Profile</title>
 </head>
 
@@ -50,14 +50,13 @@ if(isset($_SESSION["username"])){
                 <li><a href="./index.php#move-to-about">About Us</a></li>
             </ul>
             <ul class="sign-in-up">
-               
-                   <li id="signs"><a href=<?php
+               <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
-                        $name = $_SESSION["name"];
-                        echo "./edit-profile.php";
-                    }else{
-                        echo "./login.php";
-                    }
+                            $name = $_SESSION["name"];
+                            echo "./edit-profile.php";
+                        }else{
+                            echo "./login.php";
+                        }
                     ?>>
                     <i class="far fa-user"></i>
                     <?php  if(isset($_SESSION["name"])){
@@ -66,14 +65,22 @@ if(isset($_SESSION["username"])){
                     }else{
                         echo "Signin";
                     }?></a></li>
-
+                    <?php
+                    if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./admin-dash.php
+                            <i class='far fa-solar-panel'></i>
+                            <span id = 'orders'>Admin Dashboard</span></a></li>";
+                        }else{
+                            echo "";
+                        }
+                    ?>
+          
                      <?php if (isset($_SESSION['name'])){
                         echo "<li id='signs'><a href='./orders.php'";
-                        echo "<i class='fas fa-shopping-cart'></i>";
-                        echo " Your Orders";
+                        echo "<i class='far fa-shopping-cart'></i> <span id = 'orders'> Your Orders</span>";
                     }?></a></li>
-
-                   
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
@@ -84,7 +91,7 @@ if(isset($_SESSION["username"])){
                     ?> > <?php
                      if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
-                        echo "Logout";
+                        echo "<i class='far fa-sign-out-alt'></i> Logout";
                     }else{
                         echo "Signup";
                     }
@@ -177,26 +184,26 @@ if(isset($_SESSION["username"])){
             </div>
             <div class="links">
                 <div class="link-item">
-                    Home
-                </div>
-                <div class="link-item">
-                    Vheicles We Offer
-                </div>
-                <div class="link-item">
-                    How to Use
-                </div>
-                <div class="link-item">
-                    About us
-                </div>
-                <div class="links2">
-    
-                </div>
-                <div id="line2" class="link-item">
-                    Contact us
-                </div>
-                <div id="line2" class="link-item">
-                    Terms of Use
-                </div>
+                        <a href="./index.php#move-to-home">Home</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="./index.php#move-to-vheicle">Vheicles We Offer</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="./index.php#move-to-how">How to Use</a>
+                    </div>
+                    <div class="link-item">
+                        <a href ="./index.php#move-to-about">About us</a>
+                    </div>
+                    <div class="links2">
+        
+                    </div>
+                    <div id="line2" class="link-item">
+                        Contact us
+                    </div>
+                    <div id="line2" class="link-item">
+                        Terms of Use
+                    </div>
             </div>
             <div class="copyright">
                 Copyright reserved to Khalid Awlaqi 2020-2021 ©

@@ -4,7 +4,6 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="icon" href="./images/logo.png">
     <meta charset="UTF-8">
@@ -13,7 +12,6 @@ session_start();
     <link rel="stylesheet" href="./styles/forms.css">
     <title>Signup Page</title>
 </head>
-
 <body>
     <div class="container">
         <div class="left-side">

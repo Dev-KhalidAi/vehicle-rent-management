@@ -13,8 +13,8 @@ require('./dpconnection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
-<script src="https://kit.fontawesome.com/78756aeda5.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <title> Khalid's Rent Management System </title>
 </head>
 
 <body>
@@ -30,16 +30,14 @@ require('./dpconnection.php');
                     <li><a href="#move-to-about">About Us</a></li>
 
                 </ul>
-                <ul class="sign-in-up">
-                   
-
-                   <li id="signs"><a href=<?php
+                <ul class="sign-in-up">          
+                    <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
-                        $name = $_SESSION["name"];
-                        echo "./edit-profile.php";
-                    }else{
-                        echo "./login.php";
-                    }
+                            $name = $_SESSION["name"];
+                            echo "./edit-profile.php";
+                        }else{
+                            echo "./login.php";
+                        }
                     ?>>
                     <i class="far fa-user"></i>
                     <?php  if(isset($_SESSION["name"])){
@@ -48,14 +46,22 @@ require('./dpconnection.php');
                     }else{
                         echo "Signin";
                     }?></a></li>
-
+                    <?php
+                    if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./admin-dash.php
+                            <i class='far fa-solar-panel'></i>
+                            <span id = 'orders'>Admin Dashboard</span></a></li>";
+                        }else{
+                            echo "";
+                        }
+                    ?>
+          
                      <?php if (isset($_SESSION['name'])){
                         echo "<li id='signs'><a href='./orders.php'";
-                        echo "<i class='fas fa-shopping-basket'></i>";
-                        echo " Your Orders";
+                        echo "<i class='far fa-shopping-cart'></i> <span id = 'orders'> Your Orders</span>";
                     }?></a></li>
-
-                   
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
@@ -66,7 +72,7 @@ require('./dpconnection.php');
                     ?> > <?php
                      if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
-                        echo "Logout";
+                        echo "<i class='far fa-sign-out-alt'></i> Logout";
                     }else{
                         echo "Signup";
                     }
@@ -132,17 +138,17 @@ require('./dpconnection.php');
                 </div>
                 <div class="use-container">
                     <div class="steps">
-                        <i id="icon1" class="fas fa-mouse"></i>
+                        <i id="icon1" class="far fa-mouse-pointer"></i>
                         <h5>Click on Book Now</h5>
                         <p>From home section you will find <br> a white button "Book Now"</p>
                     </div>
                     <div class="steps">
-                        <i  id="icon1" class="fas fa-car"></i>
+                        <i  id="icon1" class="fal fa-car"></i>
                         <h5>Choose Car</h5>
                         <p>From the listed car <br> choose the car that suits you</p>
                     </div>
                     <div class="steps">
-                        <i id="icon1" class="fas fa-shopping-cart"></i>
+                        <i id="icon1" class="far fa-shopping-cart"></i>
                         <h5>Fill Info and Checkout</h5>
                         <p>Fill the reservation information <br> and click on checkout then fill <br> your payments method info</p>
                     </div>
@@ -202,16 +208,16 @@ require('./dpconnection.php');
                 </div>
                 <div class="links">
                     <div class="link-item">
-                        Home
+                        <a href="#move-to-home">Home</a>
                     </div>
                     <div class="link-item">
-                        Vheicles We Offer
+                        <a href="#move-to-vheicle">Vheicles We Offer</a>
                     </div>
                     <div class="link-item">
-                        How to Use
+                        <a href="#move-to-how">How to Use</a>
                     </div>
                     <div class="link-item">
-                        About us
+                        <a href ="#move-to-about">About us</a>
                     </div>
                     <div class="links2">
         

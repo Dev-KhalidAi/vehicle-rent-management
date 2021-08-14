@@ -28,7 +28,7 @@ body {
 .header {
   display: flex;
   height: 100px;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   align-items: center;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -150,4 +150,8 @@ a:visited {
 
 #check {
   color: #2bcece;
+}
+#orders {
+  font-weight: 600;
+  font-family: EuclidCircular, Arial, Helvetica, sans-serif;
 }

@@ -14,7 +14,7 @@ session_start();
     <title>Your Orders</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css">
-    <script src="https://kit.fontawesome.com/9c6a0911b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 
 
 </head>
@@ -33,14 +33,14 @@ session_start();
 
                 </ul>
                 <ul class="sign-in-up">
-                    
-                   <li id="signs"><a href=<?php
+                  
+                  <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
-                        $name = $_SESSION["name"];
-                        echo "./edit-profile.php";
-                    }else{
-                        echo "./login.php";
-                    }
+                            $name = $_SESSION["name"];
+                            echo "./edit-profile.php";
+                        }else{
+                            echo "./login.php";
+                        }
                     ?>>
                     <i class="far fa-user"></i>
                     <?php  if(isset($_SESSION["name"])){
@@ -49,14 +49,22 @@ session_start();
                     }else{
                         echo "Signin";
                     }?></a></li>
-
+                    <?php
+                    if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./admin-dash.php
+                            <i class='far fa-solar-panel'></i>
+                            <span id = 'orders'>Admin Dashboard</span></a></li>";
+                        }else{
+                            echo "";
+                        }
+                    ?>
+          
                      <?php if (isset($_SESSION['name'])){
                         echo "<li id='signs'><a href='./orders.php'";
-                        echo "<i class='fas fa-shopping-cart'></i>";
-                        echo " Your Orders";
+                        echo "<i class='far fa-shopping-cart'></i> <span id = 'orders'> Your Orders</span>";
                     }?></a></li>
-
-                   
                     <li id="signs"> <a href=<?php
                     
                      if(isset($_SESSION["name"])){
@@ -67,11 +75,12 @@ session_start();
                     ?> > <?php
                      if(isset($_SESSION["name"])){
                         $name = $_SESSION["name"];
-                        echo "Logout";
+                        echo "<i class='far fa-sign-out-alt'></i> Logout";
                     }else{
                         echo "Signup";
                     }
                     ?></a></li>
+                </ul>
             </div>
             <section>
                 
@@ -81,24 +90,31 @@ session_start();
                 <div class="square1"></div>
             </div>
             <section>
-                <div class="section-title">
-                  Your Orders
-                </div>
+              
                 <table>
-                    <tr>
-                        <th>Car Name</th>
-                        <th>Pickup-Date</th>
-                        <th>Dropoff-Date</th>
-                        <th>Total Price</th>
-                        <th>Order Status</th>
-                    </tr>
-
                     <?php
                     require('./dpconnection.php');
                     $username = $_SESSION['username'];
                     $query = "SELECT * FROM checkout WHERE user_username = '$username'";
                     $result = mysqli_query($conn, $query);
+                    $count = mysqli_num_rows($result);
+                    if ($count > 0){
+
+                        echo "
+                          <div class='section-title'>
+                            Your Orders
+                          </div>
+                            <tr>
+                                <th>Car Name</th>
+                                <th>Pickup-Date</th>
+                                <th>Dropoff-Date</th>
+                                <th>Total Price</th>
+                                <th>Order Status</th>
+                            </tr>
+                        ";
+                   
                     while($order = mysqli_fetch_array($result)){
+                        
                         echo "<tr>";
                         echo "<td>Mercedes $order[7]</td>";
                         echo "<td>$order[1]</td>";
@@ -110,7 +126,10 @@ session_start();
                             echo "<td><span id='approved'>Approved</span></td>";
                         }else{
                             echo "<td><span id='declined'>Declined</span></td>";
-                        } echo "</tr>";}
+                        } echo "</tr>";}}else{
+                            echo "<div class='section-title'> You have no orders yet <br> Make your first one</div>";
+                            echo "<a class='book-button' href='./booking.php'> Book Now</a>";
+                        }
                     ?>
                     
 
@@ -153,21 +172,27 @@ session_start();
                     </div>
 
                 </div>
+
+                <!-- <li><a href="./index.php#move-to-home"> Home</a></li>
+                    <li><a href="./index.php#move-to-vheicle">Vehicles</a></li>
+                    <li><a href="./index.php#move-to-how">How To Use </a></li>
+                    <li><a href="./index.php#move-to-about">About Us</a></li> -->
+
                 <div class="links">
                     <div class="link-item">
-                        Home
+                        <a href="./index.php#move-to-home">Home</a>
                     </div>
                     <div class="link-item">
-                        Vheicles We Offer
+                        <a href="./index.php#move-to-vheicle">Vheicles We Offer</a>
                     </div>
                     <div class="link-item">
-                        How to Use
+                        <a href="./index.php#move-to-how">How to Use</a>
                     </div>
                     <div class="link-item">
-                        About us
+                        <a href ="./index.php#move-to-about">About us</a>
                     </div>
                     <div class="links2">
-
+        
                     </div>
                     <div id="line2" class="link-item">
                         Contact us

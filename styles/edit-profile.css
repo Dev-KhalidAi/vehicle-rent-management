@@ -27,7 +27,7 @@ body {
 .header {
   display: flex;
   height: 100px;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   align-items: center;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -270,4 +270,9 @@ footer {
   font-size: 12px;
   text-align: center;
   margin-top: 20px;
+}
+
+#orders {
+  font-family: EuclidCircular, Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
