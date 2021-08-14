@@ -97,7 +97,7 @@ session_start();
             </div>
             <i class="fas fa-ban"></i>
             <div class="section-title warning">
-                You must be logged in to see this page
+                You Are Not Authorized to See This Page
             </div>
             
             <div class="seprator">

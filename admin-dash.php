@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_SESSION['role']!=1){
+    header('Location:block-user.php');
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +28,7 @@ session_start();
         <img class="main-background" src="./images/mercedes-benz.jpg.webp" alt="">
         <div class="main-section">
             <div class="header">
-                <img class="logo" src="./images/logo-white.png" alt="">
+                <a href="./index.php"><img class="logo" src="./images/logo-white.png" alt=""></a>
                 <ul class="sign-in-up">     
                    <li id="signs"><a href=<?php
                         if(isset($_SESSION["name"])){
@@ -49,6 +53,19 @@ session_start();
                             echo "./admin-dash.php
                             <i class='far fa-solar-panel'></i>
                             <span id = 'orders'>Admin Dashboard</span></a></li>";
+                        }else{
+                            echo "";
+                        }}
+                    ?>
+
+                      <?php
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./add-car.php
+                            <i class='far fa-plus-circle'></i>
+                            <span id = 'orders'>Add Car</span></a></li>";
                         }else{
                             echo "";
                         }}

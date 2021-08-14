@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+.main-container {
+  position: relative;
+}
+
 .main-background {
   position: absolute; /* Reposition logo from the natural layout */
   z-index: -1;
@@ -19,6 +23,7 @@
     to(rgba(0, 0, 0, 0))
   );
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  top: -150px;
 }
 
 .header {
@@ -26,7 +31,7 @@
   position: sticky;
   top: -100px;
   height: 100px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   align-items: center;
   -webkit-touch-callout: none; /* iOS Safari */

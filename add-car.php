@@ -24,6 +24,11 @@ if(isset($_SESSION["username"])){
 
 }
 
+if ($_SESSION['role']!=1){
+    header('Location:block-user.php');
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +118,7 @@ if(isset($_SESSION["username"])){
             </ul>
         </div>
         <div class="section-title">
-            Edit Profile
+            Add Car
         </div>
         
         <div class="seprator">
@@ -123,40 +128,31 @@ if(isset($_SESSION["username"])){
         </div>
 
         <div class="edit-profile">
-            <form action="./edit-profile-alter.php" method="post">
+            <form action="./add-car-sql.php" method="post">
                 <div class="entity">
-                    <p class="field-label">Firstname</p> <input name = "firstname" type="text" value = "<?php echo $_SESSION['firstname']?>">
-                </div>
-                <div class="entity">
-                    <p class="field-label">Lastname</p> <input  name = "lastname" type="text" value = "<?php echo $_SESSION['lastname']?>">
+                    <p class="field-label">Car Name</p> <input name = "carname" type="text" required>
                 </div>
                 <div class="entity">
-                    <p class="field-label">E-mail</p> <input  name = "email" type="text" value = "<?php echo $_SESSION['email']?>">
+                    <p class="field-label">Car Brand</p> <input  name = "carbrand" type="text"required>
                 </div>
                 <div class="entity">
-                    <p class="field-label">Username</p> <input  name = "username" type="text" value = "<?php echo $_SESSION['username']?>">
+                    <p class="field-label">Availability</p> <input  name = "availablity" type="number" required>
                 </div>
                 <div class="entity">
-                    <p class="field-label">Password</p> <input  name = "password" type="password" value = "<?php echo $_SESSION['password']?>">
+                    <p class="field-label">Price</p> <input  name = "price" type="number" required>
                 </div>
                 <div class="entity">
-                    <p class="field-label">Re-Password</p> <input  name = "repassword" type="password" value = "<?php echo $_SESSION['repassword']?>">
+                    <p class="field-label">Car Image (URL)</p> <input  name = "carimage" type="url" required>
                 </div>
-                <div class="errorMsg">
-                <?php  if (isset($_SESSION["errorExsit"])){
-                    $error = $_SESSION["errorExsit"];
-                    echo $error;} else if (isset($_SESSION["errorPassword"])){
-                    $error = $_SESSION["errorPassword"];
-                    echo $error;}
-                    ?>
-                </div>
+
                 <div class="sucMsg">
-                <?php  if (isset($_SESSION["success"])){
-                    $success = $_SESSION["success"];
+                <?php  if (isset($_SESSION["caradded"])){
+                    $success = $_SESSION["caradded"];
                     echo $success;}
                     ?>
                 </div>
-                <button type="submit" class="edit-button">Save</button>
+              
+                <button type="submit" class="edit-button">Add Car</button>
             </form>
         </div>
         <div class="seprator">
@@ -232,7 +228,6 @@ if(isset($_SESSION["username"])){
 
 
 <?php
-    unset($_SESSION["errorExsit"]);
-    unset($_SESSION["errorPassword"]);
-    unset($_SESSION["success"]);
+    unset($_SESSION["caradded"]);
+    
 ?>

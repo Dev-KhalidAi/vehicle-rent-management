@@ -59,6 +59,18 @@ if (!isset($_SESSION["name"])){
                             echo "";
                         }}
                     ?>
+                      <?php
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./add-car.php
+                            <i class='far fa-plus-circle'></i>
+                            <span id = 'orders'>Add Car</span></a></li>";
+                        }else{
+                            echo "";
+                        }}
+                    ?>
           
                      <?php if (isset($_SESSION['name'])){
                         echo "<li id='signs'><a href='./orders.php'";
@@ -100,8 +112,8 @@ if (!isset($_SESSION["name"])){
             </div>
             <div class="car-price"><?php echo $_GET["price"]; ?> SAR\ Day</div>
             <div class="car-details">
-                <div class="pickup-date"> <label>Pickup-Date:</label> <input class="date pick" type="date"></div>
-                <div class="pickup-date"> <label>Dropoff-Date:</label> <input class="date drop" type="date"></div>
+                <div class="pickup-date"> <label>Pickup-Date:</label> <input id="datefield" class="date pick" type="date"></div>
+                <div class="pickup-date"> <label>Dropoff-Date:</label> <input id="datefield" class="date drop" type="date"></div>
             </div>
             <div class="car-details">
                 <div class="pickup-date"><label>Pickup-Time:</label> <input class="date pickTime" type="time"></div>
@@ -263,6 +275,7 @@ if (!isset($_SESSION["name"])){
         </div>
     </footer>
     <script src="./scripts/checkout.js"></script>
+    <script src="./scripts/date-handler.js"></script>
 </body>
 
 </html>

@@ -58,6 +58,19 @@ require('./dpconnection.php');
                             echo "";
                         }}
                     ?>
+
+                      <?php
+                    if(isset($_SESSION["role"])){
+                        if($_SESSION["role"]==1){
+                    echo "<li id='signs'><a href=";
+                    
+                            echo "./add-car.php
+                            <i class='far fa-plus-circle'></i>
+                            <span id = 'orders'>Add Car</span></a></li>";
+                        }else{
+                            echo "";
+                        }}
+                    ?>
           
                      <?php if (isset($_SESSION['name'])){
                         echo "<li id='signs'><a href='./orders.php'";

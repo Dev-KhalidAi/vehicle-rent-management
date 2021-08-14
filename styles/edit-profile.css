@@ -27,7 +27,7 @@ body {
 .header {
   display: flex;
   height: 100px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   align-items: center;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -139,7 +139,7 @@ a:visited {
   color: white;
   text-align: left;
   align-items: center;
-  width: 100px;
+  width: 150px;
   font-weight: 300;
 }
 

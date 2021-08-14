@@ -15,7 +15,7 @@ if(isset($_POST)){
         $_SESSION['role'] = $type[5];
         $_SESSION['email'] = $type[3];
         if($type[5] == 1){
-            header('location:admin-dash.php');
+            header('location:index.php');
         }else{
             header('location:index.php');
         }
